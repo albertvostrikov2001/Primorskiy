@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', system-ui, sans-serif;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface-white text-text-primary antialiased;
+    overflow-wrap: break-word;
+  }
+
+  /* Focus visible — accessible keyboard navigation */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-accent;
+  }
+
+  /* Skip link */
+  .skip-link {
+    @apply absolute -top-full left-4 z-50 rounded-md bg-brand-accent px-4 py-2 text-sm font-semibold text-white transition-all focus:top-4;
+  }
+
+  /* Headings */
+  h1 {
+    @apply text-3xl font-bold leading-tight tracking-tight md:text-4xl lg:text-5xl;
+  }
+  h2 {
+    @apply text-2xl font-bold leading-tight md:text-3xl;
+  }
+  h3 {
+    @apply text-xl font-semibold leading-snug md:text-2xl;
+  }
+  h4 {
+    @apply text-lg font-semibold;
+  }
+
+  /* Links */
+  a {
+    @apply transition-colors;
+  }
+
+  /* Remove list styles for nav lists */
+  nav ul,
+  nav ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Container utility */
+  .container-site {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section spacing */
+  .section-py {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  /* Card */
+  .card {
+    @apply rounded-lg bg-white shadow-card transition-shadow hover:shadow-card-hover;
+  }
+
+  /* CTA button primary */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-brand-accent px-6 py-3 text-sm font-semibold text-white shadow-cta transition-all hover:bg-brand-accent-hover active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-60;
+  }
+
+  /* CTA button secondary / outline */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-brand-accent px-6 py-3 text-sm font-semibold text-brand-accent transition-all hover:bg-brand-accent hover:text-white active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-60;
+  }
+
+  /* Ghost button on dark background */
+  .btn-ghost-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-white/10 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark;
+  }
+
+  /* Form input */
+  .form-input {
+    @apply w-full rounded-md border border-surface-border bg-white px-3 py-2.5 text-sm text-text-primary placeholder:text-text-muted transition-colors focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent;
+  }
+  .form-input[aria-invalid="true"] {
+    @apply border-red-500 ring-1 ring-red-200;
+  }
+
+  /* Form label */
+  .form-label {
+    @apply mb-1 block text-sm font-medium text-text-primary;
+  }
+
+  /* Form error message */
+  .form-error {
+    @apply mt-1 flex items-center gap-1 text-xs text-red-600;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    @apply flex flex-wrap items-center gap-1.5 text-sm text-text-secondary;
+  }
+
+  /* Service icon container */
+  .icon-circle {
+    @apply flex h-12 w-12 items-center justify-center rounded-full bg-brand-accent-light text-brand-accent;
+  }
+
+  /* Dark section */
+  .section-dark {
+    @apply bg-brand-dark text-text-light;
+  }
+
+  /* Stats number */
+  .stat-number {
+    @apply text-3xl font-bold text-brand-accent md:text-4xl;
+  }
+}
+
+@layer utilities {
+  /* Gradient overlay for hero */
+  .hero-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(15, 25, 35, 0.85) 0%,
+      rgba(15, 25, 35, 0.6) 60%,
+      rgba(15, 25, 35, 0.3) 100%
+    );
+  }
+
+  /* Text balance */
+  .text-balance {
+    text-wrap: balance;
+  }
+}
