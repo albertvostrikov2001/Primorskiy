@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Container, MapPin, Cog } from 'lucide-react'
 import { buildMetadata } from '@/lib/seo'
 import { company } from '@/config/company'
@@ -25,8 +26,17 @@ export default function TerminalPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(crumbs)) }} />
 
-      <section className="bg-brand-dark py-12">
-        <div className="container-site">
+      <section className="relative overflow-hidden bg-brand-navy py-16">
+        <Image
+          src="/images/about-terminal.jpg"
+          alt=""
+          fill
+          quality={75}
+          className="object-cover object-center opacity-35"
+          sizes="100vw"
+          aria-hidden="true"
+        />
+        <div className="container-site relative z-10">
           <Breadcrumbs items={[{ label: 'О терминале' }]} className="mb-4 text-white/50 [&_a]:text-white/60" />
           <h1 className="text-white">О терминале</h1>
           <p className="mt-3 max-w-2xl text-lg text-white/70">

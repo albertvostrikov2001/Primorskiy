@@ -29,7 +29,7 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="section-dark section-py" aria-label="Ключевые показатели терминала">
+    <section className="section-indigo section-py" aria-label="Ключевые показатели терминала">
       <div className="container-site">
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
           {stats.map((stat, i) => (

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Forklift, Truck, Container, ArrowRight, Wrench } from 'lucide-react'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 
@@ -43,7 +44,7 @@ const equipment = [
 
 export default function EquipmentSection() {
   return (
-    <section className="section-py bg-surface-gray" aria-labelledby="equipment-heading">
+    <section className="section-py bg-white" aria-labelledby="equipment-heading">
       <div className="container-site">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <SectionTitle
@@ -63,8 +64,8 @@ export default function EquipmentSection() {
 
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {equipment.map((eq, i) => (
-            <div key={i} className="card p-5">
-              <div className="icon-circle mb-4">
+            <div key={i} className="card rounded-xl border border-surface-border p-5">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-dark/10 text-brand-dark">
                 <eq.icon className="h-5 w-5" aria-hidden="true" />
               </div>
               <h3 className="mb-3 text-base font-semibold">{eq.name}</h3>
@@ -80,19 +81,23 @@ export default function EquipmentSection() {
           ))}
         </div>
 
-        {/* Image placeholder */}
-        <div
-          className="mt-8 overflow-hidden rounded-xl bg-brand-dark"
-          style={{ aspectRatio: '16/5' }}
-        >
-          <div className="flex h-full w-full items-center justify-center text-white/20">
-            {/* Replace with next/image once real photos are available */}
-            <p className="text-sm font-medium">
-              Фотографии техники — {' '}
-              <Link href="/terminal/tehnika" className="text-brand-accent hover:underline">
-                перейти в раздел «Техника»
-              </Link>
-            </p>
+        {/* Equipment photo */}
+        <div className="relative mt-8 overflow-hidden rounded-2xl" style={{ aspectRatio: '16/5' }}>
+          <Image
+            src="/images/equipment-forklift.jpg"
+            alt="Вилочный погрузчик на терминальной площадке Приморский"
+            fill
+            quality={80}
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, 90vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/70 to-transparent" />
+          <div className="absolute bottom-6 left-6 text-white">
+            <p className="text-lg font-semibold">Собственный парк техники</p>
+            <Link href="/terminal/tehnika" className="mt-1 inline-flex items-center gap-1 text-sm text-brand-accent hover:underline">
+              Подробнее о технике
+              <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </div>

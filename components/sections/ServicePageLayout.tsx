@@ -67,7 +67,7 @@ export default function ServicePageLayout({
       )}
 
       {/* Hero */}
-      <section className="bg-brand-dark py-12 md:py-16" aria-labelledby="service-h1">
+      <section className="section-indigo py-12 md:py-16" aria-labelledby="service-h1">
         <div className="container-site">
           <Breadcrumbs
             items={[{ label: 'Услуги', href: '/uslugi' }, { label: h1 }]}

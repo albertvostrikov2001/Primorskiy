@@ -81,7 +81,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="section-py bg-surface-gray" aria-labelledby="services-heading">
+    <section className="section-py bg-surface-gray" aria-labelledby="services-heading" style={{ background: 'linear-gradient(180deg, #F5F5FF 0%, #ffffff 100%)' }}>
       <div className="container-site">
         <SectionTitle
           id="services-heading"
@@ -99,7 +99,7 @@ export default function ServicesSection() {
               href={service.href}
               className="card group flex flex-col p-5 transition-all hover:-translate-y-1"
             >
-              <div className="icon-circle mb-4 group-hover:bg-brand-accent group-hover:text-white transition-colors">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-dark/10 text-brand-dark transition-colors group-hover:bg-brand-accent group-hover:text-white">
                 <service.icon className="h-5 w-5" aria-hidden="true" />
               </div>
               <h3 className="mb-2 text-base font-semibold text-text-primary">{service.title}</h3>

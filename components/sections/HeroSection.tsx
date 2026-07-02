@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, MapPin, Package } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { company } from '@/config/company'
@@ -6,17 +7,25 @@ import { company } from '@/config/company'
 export default function HeroSection() {
   return (
     <section
-      className="relative flex min-h-[560px] items-center bg-brand-dark md:min-h-[640px]"
+      className="relative flex min-h-[600px] items-center overflow-hidden bg-brand-navy md:min-h-[680px] lg:min-h-[720px]"
       aria-label="Главный баннер"
     >
-      {/* Background pattern */}
-      <div
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}
-        aria-hidden="true"
+      {/* Background image */}
+      <Image
+        src="/images/hero-terminal.jpg"
+        alt="Контейнерный терминал Приморский в Новороссийске"
+        fill
+        priority
+        quality={85}
+        className="object-cover object-center"
+        sizes="100vw"
       />
+
+      {/* Deep indigo gradient overlay */}
+      <div className="absolute inset-0 hero-overlay" aria-hidden="true" />
+
+      {/* Subtle dot pattern overlay */}
+      <div className="absolute inset-0 indigo-pattern opacity-30" aria-hidden="true" />
 
       {/* Accent line */}
       <div className="absolute left-0 top-0 h-1 w-full bg-brand-accent" aria-hidden="true" />

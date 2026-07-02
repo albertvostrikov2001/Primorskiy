@@ -73,8 +73,8 @@ export default function Header() {
       className={cn(
         'sticky top-0 z-40 w-full border-b transition-all duration-200',
         isScrolled
-          ? 'border-surface-border bg-white/95 shadow-card backdrop-blur-sm'
-          : 'border-transparent bg-white'
+          ? 'border-surface-dark-border bg-brand-dark/95 shadow-indigo-glow backdrop-blur-sm'
+          : 'border-white/10 bg-brand-navy'
       )}
     >
       <div className="container-site">
@@ -82,12 +82,12 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex shrink-0 items-center gap-2 text-brand-dark"
+            className="flex shrink-0 items-center gap-2"
             aria-label={`${company.name} — на главную`}
           >
             <Container className="h-8 w-8 text-brand-accent" aria-hidden="true" />
             <span className="hidden text-sm font-bold leading-tight sm:block">
-              <span className="block text-brand-dark">Терминал</span>
+              <span className="block text-white/90">Терминал</span>
               <span className="block text-brand-accent">Приморский</span>
             </span>
           </Link>
@@ -98,8 +98,8 @@ export default function Header() {
             <div className="relative" ref={servicesRef}>
               <button
                 className={cn(
-                  'flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-surface-gray-medium hover:text-brand-accent',
-                  servicesOpen && 'bg-surface-gray-medium text-brand-accent'
+                  'flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white',
+                  servicesOpen && 'bg-white/10 text-white'
                 )}
                 aria-expanded={servicesOpen}
                 aria-haspopup="true"
@@ -117,7 +117,7 @@ export default function Header() {
                 <div
                   id="services-menu"
                   role="menu"
-                  className="animate-slide-down absolute left-0 top-full mt-1 min-w-64 rounded-lg border border-surface-border bg-white p-1 shadow-card-hover"
+                  className="animate-slide-down absolute left-0 top-full mt-1 min-w-64 rounded-lg border border-surface-dark-border bg-brand-graphite p-1 shadow-card-hover"
                 >
                   {services.map((s) => (
                     <Link
@@ -125,7 +125,7 @@ export default function Header() {
                       href={s.href}
                       role="menuitem"
                       className={cn(
-                        'block rounded-md px-3 py-2 text-sm text-text-primary transition-colors hover:bg-brand-accent-light hover:text-brand-accent',
+                        'block rounded-md px-3 py-2 text-sm text-white/80 transition-colors hover:bg-white/10 hover:text-white',
                         s.href === '/uslugi' && 'font-semibold text-brand-accent'
                       )}
                       onClick={() => setServicesOpen(false)}
@@ -141,7 +141,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-surface-gray-medium hover:text-brand-accent"
+                className="rounded-md px-3 py-2 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
               >
                 {link.label}
               </Link>
@@ -153,7 +153,7 @@ export default function Header() {
             {company.phone && (
               <a
                 href={`tel:${company.phoneTel}`}
-                className="hidden items-center gap-1.5 text-sm font-semibold text-text-primary transition-colors hover:text-brand-accent md:flex"
+                className="hidden items-center gap-1.5 text-sm font-semibold text-white/80 transition-colors hover:text-white md:flex"
                 aria-label={`Позвонить: ${company.phone}`}
                 onClick={() => trackEvent('click_phone')}
               >
@@ -174,7 +174,7 @@ export default function Header() {
 
             {/* Mobile menu toggle */}
             <button
-              className="flex h-10 w-10 items-center justify-center rounded-md transition-colors hover:bg-surface-gray-medium lg:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-md text-white transition-colors hover:bg-white/10 lg:hidden"
               aria-label={mobileOpen ? 'Закрыть меню' : 'Открыть меню'}
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
@@ -194,11 +194,11 @@ export default function Header() {
       {mobileOpen && (
         <div
           id="mobile-menu"
-          className="animate-fade-in border-t border-surface-border bg-white lg:hidden"
+          className="animate-fade-in border-t border-white/10 bg-brand-dark lg:hidden"
         >
           <nav aria-label="Мобильная навигация" className="container-site py-4">
             <div className="flex flex-col gap-1">
-              <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-text-muted">
+              <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white/40">
                 Услуги
               </p>
               {services.map((s) => (
@@ -206,7 +206,7 @@ export default function Header() {
                   key={s.href}
                   href={s.href}
                   className={cn(
-                    'rounded-md px-3 py-2.5 text-sm font-medium transition-colors hover:bg-brand-accent-light hover:text-brand-accent',
+                    'rounded-md px-3 py-2.5 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white',
                     s.href === '/uslugi' && 'font-semibold text-brand-accent'
                   )}
                   onClick={() => setMobileOpen(false)}
@@ -215,26 +215,26 @@ export default function Header() {
                 </Link>
               ))}
 
-              <div className="my-2 border-t border-surface-border" />
+              <div className="my-2 border-t border-white/10" />
 
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-md px-3 py-2.5 text-sm font-medium transition-colors hover:bg-surface-gray-medium"
+                  className="rounded-md px-3 py-2.5 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
 
-              <div className="my-2 border-t border-surface-border" />
+              <div className="my-2 border-t border-white/10" />
 
               <div className="flex flex-col gap-2 px-3 py-2">
                 {company.phone && (
                   <a
                     href={`tel:${company.phoneTel}`}
-                    className="flex items-center gap-2 text-sm font-semibold text-text-primary"
+                    className="flex items-center gap-2 text-sm font-semibold text-white/90"
                     onClick={() => trackEvent('click_phone')}
                   >
                     <Phone className="h-4 w-4 text-brand-accent" aria-hidden="true" />

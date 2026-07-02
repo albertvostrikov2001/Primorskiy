@@ -83,8 +83,8 @@ export default function ScenariosSection() {
                 className={cn(
                   'flex items-center gap-3 rounded-lg px-4 py-3.5 text-left text-sm font-medium transition-all',
                   active === scenario.id
-                    ? 'bg-brand-accent text-white shadow-cta'
-                    : 'text-text-secondary hover:bg-surface-gray-medium hover:text-text-primary'
+                    ? 'bg-brand-dark text-white shadow-indigo-glow'
+                    : 'text-text-secondary hover:bg-surface-gray hover:text-brand-dark'
                 )}
                 onClick={() => setActive(scenario.id)}
               >
@@ -99,7 +99,7 @@ export default function ScenariosSection() {
             role="tabpanel"
             id={`scenario-panel-${current.id}`}
             aria-labelledby={`scenario-tab-${current.id}`}
-            className="flex-1 rounded-xl border border-surface-border bg-surface-gray p-6 md:p-8"
+            className="flex-1 rounded-xl border border-surface-border bg-gradient-to-br from-surface-gray to-white p-6 md:p-8"
           >
             <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-brand-accent/10">
               <current.icon className="h-7 w-7 text-brand-accent" aria-hidden="true" />

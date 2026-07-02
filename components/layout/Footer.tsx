@@ -37,7 +37,7 @@ export default function Footer() {
   const hasContacts = !!(company.phone || company.email || company.address)
 
   return (
-    <footer className="bg-brand-graphite text-text-light">
+    <footer className="bg-brand-navy text-text-light" style={{ backgroundImage: 'linear-gradient(180deg, #2D2A6E 0%, #16153A 100%)' }}>
       <div className="container-site py-12 lg:py-16">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}

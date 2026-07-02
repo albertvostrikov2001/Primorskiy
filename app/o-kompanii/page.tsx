@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { buildMetadata } from '@/lib/seo'
 import { company } from '@/config/company'
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
@@ -20,12 +21,34 @@ export default function OKompaniiPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(crumbs)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }} />
 
-      <section className="bg-brand-dark py-12">
-        <div className="container-site">
+      <section className="relative overflow-hidden bg-brand-navy py-16">
+        <Image
+          src="/images/team-operations.jpg"
+          alt=""
+          fill
+          quality={75}
+          className="object-cover object-center opacity-30"
+          sizes="100vw"
+          aria-hidden="true"
+        />
+        <div className="container-site relative z-10">
           <Breadcrumbs items={[{ label: 'О компании' }]} className="mb-4 text-white/50 [&_a]:text-white/60" />
           <h1 className="text-white">О компании</h1>
         </div>
       </section>
+
+      {/* Terminal photo */}
+      <div className="relative h-64 overflow-hidden md:h-80 lg:h-96">
+        <Image
+          src="/images/about-terminal.jpg"
+          alt="Терминальная площадка — вид с воздуха"
+          fill
+          quality={80}
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 to-transparent" />
+      </div>
 
       <section className="section-py bg-white">
         <div className="container-site max-w-3xl">

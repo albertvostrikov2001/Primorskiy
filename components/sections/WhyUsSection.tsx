@@ -57,7 +57,7 @@ export default function WhyUsSection() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {advantages.map((adv, i) => (
             <div key={i} className="flex gap-4">
-              <div className="icon-circle shrink-0">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-dark/10 text-brand-dark">
                 <adv.icon className="h-5 w-5" aria-hidden="true" />
               </div>
               <div>
