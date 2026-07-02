@@ -19,7 +19,7 @@ function buildEmailHtml(formType: string, data: Record<string, unknown>): string
 
   return `
     <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
-      <h2 style="background:#E0FFFF;color:#1A1A1A;padding:16px 20px;margin:0">Новая заявка — ${formType === 'full' ? 'Расчёт стоимости' : 'Быстрая заявка'}</h2>
+      <h2 style="background:#F59E0B;color:#ffffff;padding:16px 20px;margin:0">Новая заявка — ${formType === 'full' ? 'Расчёт стоимости' : 'Быстрая заявка'}</h2>
       <table style="width:100%;border-collapse:collapse;margin-top:16px">${rows}</table>
       <p style="color:#9ca3af;font-size:12px;margin-top:16px">Терминал Приморский — автоматическое уведомление с сайта</p>
     </div>

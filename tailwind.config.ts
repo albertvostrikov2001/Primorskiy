@@ -17,9 +17,9 @@ const config: Config = {
           navy: '#16153A',
           indigo: '#4338CA',
           'indigo-light': '#6366F1',
-          accent: '#E0FFFF',
-          'accent-hover': '#B0E0E6',
-          'accent-light': '#F0FFFF',
+          accent: '#F59E0B',
+          'accent-hover': '#D97706',
+          'accent-light': '#FEF3C7',
         },
         text: {
           primary: '#1A1A1A',
@@ -58,7 +58,7 @@ const config: Config = {
       boxShadow: {
         card: '0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.08)',
         'card-hover': '0 4px 16px 0 rgb(30 27 75 / 0.2)',
-        cta: '0 4px 14px 0 rgb(224 255 255 / 0.4)',
+        cta: '0 4px 14px 0 rgb(245 158 11 / 0.4)',
         'indigo-glow': '0 0 40px 0 rgb(67 56 202 / 0.3)',
       },
       animation: {
