@@ -1,6 +1,8 @@
 import type { MetadataRoute } from 'next'
 import { company } from '@/config/company'
 
+export const dynamic = 'force-static'
+
 const BASE = company.siteUrl
 
 const routes: { url: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
