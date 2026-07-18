@@ -30,7 +30,7 @@ export default function InfrastrukturaPage() {
 
       <section className="bg-brand-dark py-12">
         <div className="container-site">
-          <Breadcrumbs items={[{ label: 'О терминале', href: '/terminal' }, { label: 'Инфраструктура' }]} className="mb-4 text-white/50 [&_a]:text-white/60 [&_a:hover]:text-brand-accent" />
+          <Breadcrumbs items={[{ label: 'О терминале', href: '/terminal' }, { label: 'Инфраструктура' }]} className="mb-4 text-white" />
           <h1 className="text-white">Инфраструктура терминала</h1>
         </div>
       </section>

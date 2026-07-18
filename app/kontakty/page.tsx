@@ -33,7 +33,7 @@ export default function KontaktyPage() {
 
       <section className="bg-brand-dark py-12">
         <div className="container-site">
-          <Breadcrumbs items={[{ label: 'Контакты' }]} className="mb-4 text-white/50 [&_a]:text-white/60" />
+          <Breadcrumbs items={[{ label: 'Контакты' }]} className="mb-4 text-white" />
           <h1 className="text-white">Контакты</h1>
           <p className="mt-3 text-lg text-white/70">
             Свяжитесь с нами, чтобы обсудить задачу или получить расчёт стоимости

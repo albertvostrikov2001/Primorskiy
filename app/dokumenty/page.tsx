@@ -37,7 +37,7 @@ export default function DokumentyPage() {
 
       <section className="bg-brand-dark py-12">
         <div className="container-site">
-          <Breadcrumbs items={[{ label: 'Документы' }]} className="mb-4 text-white/50 [&_a]:text-white/60" />
+          <Breadcrumbs items={[{ label: 'Документы' }]} className="mb-4 text-white" />
           <h1 className="text-white">Документы</h1>
         </div>
       </section>

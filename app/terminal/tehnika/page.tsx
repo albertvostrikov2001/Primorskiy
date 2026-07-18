@@ -47,7 +47,7 @@ export default function TehnikaPage() {
 
       <section className="bg-brand-dark py-12">
         <div className="container-site">
-          <Breadcrumbs items={[{ label: 'О терминале', href: '/terminal' }, { label: 'Техника' }]} className="mb-4 text-white/50 [&_a]:text-white/60 [&_a:hover]:text-brand-accent" />
+          <Breadcrumbs items={[{ label: 'О терминале', href: '/terminal' }, { label: 'Техника' }]} className="mb-4 text-white" />
           <h1 className="text-white">Терминальная техника</h1>
           <p className="mt-3 text-lg text-white/70">Собственный парк оборудования для выполнения всех типов операций с контейнерами и грузами</p>
         </div>

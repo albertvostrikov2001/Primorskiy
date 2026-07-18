@@ -37,7 +37,7 @@ export default function TerminalPage() {
           aria-hidden="true"
         />
         <div className="container-site relative z-10">
-          <Breadcrumbs items={[{ label: 'О терминале' }]} className="mb-4 text-white/50 [&_a]:text-white/60" />
+          <Breadcrumbs items={[{ label: 'О терминале' }]} className="mb-4 text-white" />
           <h1 className="text-white">О терминале</h1>
           <p className="mt-3 max-w-2xl text-lg text-white/70">
             Терминал Приморский — контейнерная площадка в Новороссийске, расположенная вблизи морского порта

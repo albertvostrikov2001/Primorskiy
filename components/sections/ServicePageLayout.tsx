@@ -71,7 +71,7 @@ export default function ServicePageLayout({
         <div className="container-site">
           <Breadcrumbs
             items={[{ label: 'Услуги', href: '/uslugi' }, { label: h1 }]}
-            className="mb-4 text-white/50 [&_a]:text-white/60 [&_a:hover]:text-brand-accent"
+            className="mb-4 text-white"
           />
           <h1 id="service-h1" className="mb-4 max-w-3xl text-white">
             {h1}

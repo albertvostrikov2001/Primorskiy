@@ -33,7 +33,7 @@ export default function UslugiPage() {
         <div className="container-site">
           <Breadcrumbs
             items={[{ label: 'Услуги' }]}
-            className="mb-4 text-white/50 [&_a]:text-white/60"
+            className="mb-4 text-white"
           />
           <h1 className="text-white">Услуги контейнерного терминала</h1>
           <p className="mt-3 max-w-2xl text-lg text-white/70">

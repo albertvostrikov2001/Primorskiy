@@ -32,7 +32,7 @@ export default function OKompaniiPage() {
           aria-hidden="true"
         />
         <div className="container-site relative z-10">
-          <Breadcrumbs items={[{ label: 'О компании' }]} className="mb-4 text-white/50 [&_a]:text-white/60" />
+          <Breadcrumbs items={[{ label: 'О компании' }]} className="mb-4 text-white" />
           <h1 className="text-white">О компании</h1>
         </div>
       </section>

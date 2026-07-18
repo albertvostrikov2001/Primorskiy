@@ -19,7 +19,7 @@ export default function RaschetStoimostiPage() {
 
       <section className="bg-brand-dark py-12">
         <div className="container-site">
-          <Breadcrumbs items={[{ label: 'Расчёт стоимости' }]} className="mb-4 text-white/50 [&_a]:text-white/60" />
+          <Breadcrumbs items={[{ label: 'Расчёт стоимости' }]} className="mb-4 text-white" />
           <h1 className="text-white">Расчёт стоимости</h1>
           <p className="mt-3 max-w-2xl text-lg text-white/70">
             Заполните форму с параметрами груза или контейнера — менеджер рассчитает стоимость и ответит на вопросы
