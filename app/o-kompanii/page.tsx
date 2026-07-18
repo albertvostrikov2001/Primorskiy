@@ -37,19 +37,6 @@ export default function OKompaniiPage() {
         </div>
       </section>
 
-      {/* Terminal photo */}
-      <div className="relative h-64 overflow-hidden md:h-80 lg:h-96">
-        <Image
-          src="/images/about-terminal.jpg"
-          alt="Терминальная площадка — вид с воздуха"
-          fill
-          quality={80}
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 to-transparent" />
-      </div>
-
       <section className="section-py bg-white">
         <div className="container-site max-w-3xl">
           <div className="prose prose-gray max-w-none">
