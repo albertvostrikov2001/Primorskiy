@@ -128,16 +128,14 @@ export default function KontaktyPage() {
                     <div>
                       <p className="text-xs font-medium uppercase tracking-wider text-text-muted">Адрес</p>
                       <p className="font-semibold text-text-primary">{company.address}</p>
-                      {company.coordinates.lat !== 0 && (
-                        <a
-                          href={`https://yandex.ru/maps/?pt=${company.coordinates.lng},${company.coordinates.lat}&z=16`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="mt-1 inline-block text-sm text-brand-accent hover:underline"
-                        >
-                          Построить маршрут →
-                        </a>
-                      )}
+                      <a
+                        href={`https://yandex.ru/maps/?pt=${company.coordinates.lng},${company.coordinates.lat}&z=16`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-1 inline-block text-sm text-brand-accent hover:underline"
+                      >
+                        Построить маршрут →
+                      </a>
                     </div>
                   </div>
                 )}

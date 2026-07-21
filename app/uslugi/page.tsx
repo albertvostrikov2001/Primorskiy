@@ -1,23 +1,30 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, Container, Package, RefreshCw, PackageOpen, Forklift, Truck, Warehouse, AlertTriangle } from 'lucide-react'
+import { ArrowRight, Container, Package, RefreshCw, PackageOpen, Forklift, Truck, Warehouse, AlertTriangle, Droplets, Scale, FileText, Globe, Tag, Hand, Layers } from 'lucide-react'
 import { buildMetadata } from '@/lib/seo'
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { breadcrumbJsonLd } from '@/lib/seo/jsonld'
 
 export const metadata: Metadata = buildMetadata({
   title: 'Услуги контейнерного терминала в Новороссийске | Терминал Приморский',
-  description: 'Полный перечень услуг Терминала Приморский: хранение контейнеров и грузов, перетарка, затарка, погрузка, контейнерные перевозки, складские услуги.',
+  description: 'Полный перечень услуг Терминала Приморский: хранение контейнеров и грузов, перетарка, затарка, погрузка, международные перевозки, экспедирование, таможенное оформление.',
   path: '/uslugi',
 })
 
 const services = [
   { icon: Container, title: 'Хранение контейнеров', description: 'Размещение гружёных и порожних контейнеров. Вместимость до 3900 TEU.', href: '/uslugi/hranenie-konteynerov' },
-  { icon: Package, title: 'Хранение грузов', description: 'Временное хранение паллетированных, тарно-штучных и генеральных грузов.', href: '/uslugi/hranenie-gruzov' },
+  { icon: Package, title: 'Хранение грузов', description: 'Временное хранение паллетированных, тарно-штучных и генеральных грузов, в том числе с температурным режимом.', href: '/uslugi/hranenie-gruzov' },
   { icon: RefreshCw, title: 'Перетарка грузов', description: 'Перегрузка из контейнера в автомобиль, между контейнерами и другие варианты.', href: '/uslugi/peretarka-gruzov' },
   { icon: PackageOpen, title: 'Затарка и растарка', description: 'Загрузка груза в контейнер и выгрузка груза из контейнера.', href: '/uslugi/zatarka-i-rastarka' },
-  { icon: Forklift, title: 'Погрузочно-разгрузочные работы', description: 'Погрузка и выгрузка с применением вилочных погрузчиков и контейнеровозов.', href: '/uslugi/pogruzochno-razgruzochnye-raboty' },
+  { icon: Forklift, title: 'Погрузочно-разгрузочные работы', description: 'Погрузка и выгрузка с применением вилочных погрузчиков и ричстакера.', href: '/uslugi/pogruzochno-razgruzochnye-raboty' },
+  { icon: Droplets, title: 'Наливные грузы и флексибаги', description: 'Приём наливного груза с автоцистерн, оборудование контейнеров флексибагами.', href: '/uslugi/nalivnye-gruzy' },
+  { icon: Scale, title: 'Взвешивание груза и контейнеров', description: 'Взвешивание груза и контейнеров с выдачей документов.', href: '/uslugi/vzveshivanie' },
+  { icon: Tag, title: 'Стикеровка и маркировка', description: 'Стикеровка, маркировка груза, сканирование QR-кода.', href: '/uslugi/stikerovka-markirovka' },
+  { icon: Hand, title: 'Ручная и механизированная обработка', description: 'Ручная обработка груза и механизированная с ручной доработкой.', href: '/uslugi/ruchnaya-obrabotka' },
+  { icon: Layers, title: 'Формирование грузовой единицы', description: 'Формирование грузовой единицы с предоставлением поддона и запаллетирование.', href: '/uslugi/formirovanie-gruzovoy-edinicy' },
   { icon: Truck, title: 'Контейнерные перевозки', description: 'Доставка контейнеров из порта на терминал и до склада получателя.', href: '/uslugi/konteynernye-perevozki' },
+  { icon: Globe, title: 'Международные перевозки и автодоставка', description: 'Международные автоперевозки грузов и автодоставка по России.', href: '/uslugi/mezhdunarodnye-perevozki' },
+  { icon: FileText, title: 'Экспедирование и таможенное оформление', description: 'Транспортно-экспедиционные услуги и таможенное оформление грузов.', href: '/uslugi/ekspedirovanie' },
   { icon: Warehouse, title: 'Складские услуги', description: 'Сортировка, паллетирование, маркировка, переупаковка грузов.', href: '/uslugi/skladskie-uslugi' },
   { icon: AlertTriangle, title: 'Нестандартные грузы', description: 'Обработка тяжеловесных и негабаритных грузов. Только по согласованию.', href: '/uslugi/nestandartnye-gruzy' },
 ]
@@ -37,7 +44,7 @@ export default function UslugiPage() {
           />
           <h1 className="text-white">Услуги контейнерного терминала</h1>
           <p className="mt-3 max-w-2xl text-lg text-white/70">
-            Полный спектр терминальных операций в Новороссийске: от хранения и перетарки до контейнерных перевозок
+            Полный спектр терминальных операций в Новороссийске: от хранения и перетарки до международных перевозок и таможенного оформления
           </p>
         </div>
       </section>

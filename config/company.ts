@@ -1,76 +1,63 @@
-/**
- * Централизованная конфигурация компании.
- * Все поля, помеченные // TODO: ПОДТВЕРДИТЬ У ЗАКАЗЧИКА,
- * необходимо заполнить перед публикацией.
- *
- * Если поле пустое (null / '') — соответствующий элемент UI не отображается.
- */
-
 export const company = {
-  /** Торговое наименование */
   name: 'Терминал Приморский',
 
-  /** Юридическое наименование организации */
-  legalName: '', // TODO: ПОДТВЕРДИТЬ У ЗАКАЗЧИКА
+  legalName: 'ООО «Терминал «Приморский»',
 
-  /** Физический адрес */
-  address: '', // TODO: ПОДТВЕРДИТЬ У ЗАКАЗЧИКА
+  /** Фактический адрес (для отображения на сайте) */
+  address: 'Краснодарский край, г. Новороссийск, Кирилловская промзона, ул. 4-я Промышленная, 5',
 
-  /** Координаты для карты */
+  /** Юридический адрес */
+  legalAddress: '353909, Краснодарский край, г. Новороссийск, ул. Мефодиевская д. 145, к. 1, офис 6/5',
+
+  /** Почтовый адрес */
+  postalAddress: '353991, Краснодарский край, г. Новороссийск, с. Гайдук, ул. Новороссийское шоссе, 11',
+
   coordinates: {
-    lat: 0, // TODO: ПОДТВЕРДИТЬ У ЗАКАЗЧИКА
-    lng: 0, // TODO: ПОДТВЕРДИТЬ У ЗАКАЗЧИКА
+    lat: 44.7322,
+    lng: 37.7938,
   },
 
-  /** Основной телефон (кликабельный tel:) */
-  phone: '', // TODO: ПОДТВЕРДИТЬ У ЗАКАЗЧИКА
-  /** Телефон для tel:-ссылки (без пробелов, с кодом страны: +7XXXXXXXXXX) */
-  phoneTel: '', // TODO: ПОДТВЕРДИТЬ У ЗАКАЗЧИКА
+  phone: '+7 (918) 080-43-43',
+  phoneTel: '+79180804343',
 
-  /** Email для связи */
-  email: '', // TODO: ПОДТВЕРДИТЬ У ЗАКАЗЧИКА
+  email: 'terminal-primorskiy@mail.ru',
 
-  /** Режим работы (текст для отображения) */
-  workingHours: '', // TODO: ПОДТВЕРДИТЬ У ЗАКАЗЧИКА
+  workingHours: '',
 
-  /**
-   * WhatsApp: номер с кодом страны без + (например: 79001234567)
-   * null — кнопка не отображается
-   */
-  whatsapp: null as string | null, // TODO: ПОДТВЕРДИТЬ У ЗАКАЗЧИКА
+  whatsapp: null as string | null,
+  telegram: null as string | null,
 
-  /**
-   * Telegram: username без @ (например: terminal_primorskiy) или null
-   * null — кнопка не отображается
-   */
-  telegram: null as string | null, // TODO: ПОДТВЕРДИТЬ У ЗАКАЗЧИКА
-
-  /** Подтверждённые технические характеристики */
   capacity: 'до 3900 TEU',
   distanceToPort: 'около 10 км до морского порта Новороссийска',
 
-  /** Город для SEO / LocalBusiness */
   city: 'Новороссийск',
   region: 'Краснодарский край',
   country: 'RU',
 
-  /** ID счётчиков аналитики */
-  analyticsYM: process.env.NEXT_PUBLIC_YM_ID ?? '', // TODO: ID Яндекс Метрики
-  analyticsGA: process.env.NEXT_PUBLIC_GA_ID ?? '', // TODO: ID Google Analytics 4
+  /** Реквизиты */
+  inn: '2315231044',
+  kpp: '231501001',
+  ogrn: '1232300040774',
+  bank: 'Филиал «Ростовский» АО «Альфа-Банк»',
+  bik: '046015207',
+  rs: '40702810326330000444',
+  ks: '30101810500000000207',
 
-  /** URL сайта */
+  /** Руководство */
+  director: 'Демченко Дмитрий Николаевич',
+
+  analyticsYM: process.env.NEXT_PUBLIC_YM_ID ?? '',
+  analyticsGA: process.env.NEXT_PUBLIC_GA_ID ?? '',
+
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://terminal-primorskiy.ru',
 
-  /** Социальные профили */
   social: {
-    vk: null as string | null,       // TODO: ПОДТВЕРДИТЬ У ЗАКАЗЧИКА
-    youtube: null as string | null,  // TODO: ПОДТВЕРДИТЬ У ЗАКАЗЧИКА
+    vk: null as string | null,
+    youtube: null as string | null,
   },
 
-  /** Максимальный размер загружаемого файла (байт) */
   maxFileSize: parseInt(process.env.MAX_FILE_SIZE ?? '5242880', 10),
 
-  /** Допустимые типы файлов для загрузки в форму */
   allowedFileTypes: [
     'application/pdf',
     'application/msword',
