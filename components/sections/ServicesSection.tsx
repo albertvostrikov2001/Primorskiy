@@ -4,43 +4,43 @@ import { ArrowUpRight } from 'lucide-react'
 
 const services = [
   {
-    title: 'Хранение контейнеров',
+    title: 'Хранение контейнеров и грузов',
     img: '/images/hero-terminal.jpg',
     href: '/uslugi/hranenie-konteynerov',
   },
   {
-    title: 'Хранение грузов',
-    img: '/images/storage-warehouse.jpg',
-    href: '/uslugi/hranenie-gruzov',
-  },
-  {
-    title: 'Перетарка грузов',
+    title: 'Перетарка, затарка и погрузо-разгрузочные работы',
     img: '/images/cargo-repack.jpg',
     href: '/uslugi/peretarka-gruzov',
   },
   {
-    title: 'Затарка и растарка',
-    img: '/images/about-terminal.jpg',
-    href: '/uslugi/zatarka-i-rastarka',
-  },
-  {
-    title: 'Погрузочно-разгрузочные работы',
-    img: '/images/equipment-forklift.jpg',
-    href: '/uslugi/pogruzochno-razgruzochnye-raboty',
-  },
-  {
-    title: 'Контейнерные перевозки',
+    title: 'Перевозки и автодоставка',
     img: '/images/trucking-transport.jpg',
     href: '/uslugi/konteynernye-perevozki',
   },
   {
-    title: 'Складские услуги',
+    title: 'Наливные грузы и флексибаги',
+    img: '/images/about-terminal.jpg',
+    href: '/uslugi/nalivnye-gruzy',
+  },
+  {
+    title: 'Экспедирование и таможенное оформление',
     img: '/images/customs-clearance.jpg',
+    href: '/uslugi/ekspedirovanie',
+  },
+  {
+    title: 'Складские услуги',
+    img: '/images/storage-warehouse.jpg',
     href: '/uslugi/skladskie-uslugi',
   },
   {
-    title: 'Нестандартные грузы',
+    title: 'Стикеровка и маркировка',
     img: '/images/team-operations.jpg',
+    href: '/uslugi/stikerovka-markirovka',
+  },
+  {
+    title: 'Нестандартные грузы',
+    img: '/images/equipment-forklift.jpg',
     href: '/uslugi/nestandartnye-gruzy',
   },
 ]
