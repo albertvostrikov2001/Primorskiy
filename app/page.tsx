@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { company } from '@/config/company'
 import { organizationJsonLd, localBusinessJsonLd, faqJsonLd } from '@/lib/seo/jsonld'
 import HeroSection from '@/components/sections/HeroSection'
-import StatsSection from '@/components/sections/StatsSection'
 import ScenariosSection from '@/components/sections/ScenariosSection'
 import ServicesSection from '@/components/sections/ServicesSection'
 import WhyUsSection from '@/components/sections/WhyUsSection'
@@ -73,7 +72,6 @@ export default function HomePage() {
       />
 
       <HeroSection />
-      <StatsSection />
       <ScenariosSection />
       <ServicesSection />
       <WhyUsSection />
