@@ -167,14 +167,17 @@ export default function KontaktyPage() {
                 </div>
               </div>
 
-              {/* Map placeholder */}
-              {company.address && (
-                <div className="mt-6 overflow-hidden rounded-xl border border-surface-border bg-surface-gray" style={{ height: 300 }}>
-                  <div className="flex h-full items-center justify-center text-sm text-text-muted">
-                    Карта будет добавлена после подтверждения адреса заказчиком
-                  </div>
-                </div>
-              )}
+              {/* Yandex Maps embed */}
+              <div className="mt-6 overflow-hidden rounded-xl border border-surface-border" style={{ height: 300 }}>
+                <iframe
+                  src="https://yandex.ru/map-widget/v1/?pt=37.7938,44.7322&z=16&l=map&text=%D0%9A%D0%B8%D1%80%D0%B8%D0%BB%D0%BB%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BF%D1%80%D0%BE%D0%BC%D0%B7%D0%BE%D0%BD%D0%B0%2C%20%D1%83%D0%BB.%204-%D1%8F%20%D0%9F%D1%80%D0%BE%D0%BC%D1%8B%D1%88%D0%BB%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F%2C%205"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0, display: 'block' }}
+                  allowFullScreen
+                  title="Расположение Терминала Приморский на карте"
+                />
+              </div>
             </div>
 
             {/* Form */}
