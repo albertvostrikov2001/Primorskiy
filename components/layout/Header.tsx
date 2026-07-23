@@ -9,15 +9,15 @@ import { trackEvent } from '@/lib/analytics'
 import { Button } from '@/components/ui/Button'
 
 const services = [
-  { label: 'Все услуги', href: '/uslugi' },
-  { label: 'Хранение контейнеров', href: '/uslugi/hranenie-konteynerov' },
-  { label: 'Хранение грузов', href: '/uslugi/hranenie-gruzov' },
-  { label: 'Перетарка грузов', href: '/uslugi/peretarka-gruzov' },
-  { label: 'Затарка и растарка', href: '/uslugi/zatarka-i-rastarka' },
-  { label: 'Погрузочно-разгрузочные работы', href: '/uslugi/pogruzochno-razgruzochnye-raboty' },
-  { label: 'Контейнерные перевозки', href: '/uslugi/konteynernye-perevozki' },
-  { label: 'Складские услуги', href: '/uslugi/skladskie-uslugi' },
-  { label: 'Нестандартные грузы', href: '/uslugi/nestandartnye-gruzy' },
+  { label: 'Все услуги', href: '/uslugi', emoji: '📋' },
+  { label: 'Хранение контейнеров', href: '/uslugi/hranenie-konteynerov', emoji: '📦' },
+  { label: 'Хранение грузов', href: '/uslugi/hranenie-gruzov', emoji: '🗃️' },
+  { label: 'Перетарка грузов', href: '/uslugi/peretarka-gruzov', emoji: '🔄' },
+  { label: 'Затарка и растарка', href: '/uslugi/zatarka-i-rastarka', emoji: '📥' },
+  { label: 'Погрузочно-разгрузочные работы', href: '/uslugi/pogruzochno-razgruzochnye-raboty', emoji: '🏗️' },
+  { label: 'Контейнерные перевозки', href: '/uslugi/konteynernye-perevozki', emoji: '🚛' },
+  { label: 'Складские услуги', href: '/uslugi/skladskie-uslugi', emoji: '🏭' },
+  { label: 'Нестандартные грузы', href: '/uslugi/nestandartnye-gruzy', emoji: '⚙️' },
 ]
 
 const navLinks = [
@@ -125,12 +125,16 @@ export default function Header() {
                       href={s.href}
                       role="menuitem"
                       className={cn(
-                        'block rounded-md px-3 py-2 text-sm text-white/80 transition-colors hover:bg-white/10 hover:text-white',
+                        'group flex items-center gap-2.5 rounded-md px-3 py-2 text-sm text-white/80 transition-colors hover:bg-white/10 hover:text-white',
                         s.href === '/uslugi' && 'font-semibold text-brand-accent'
                       )}
                       onClick={() => setServicesOpen(false)}
                     >
-                      {s.label}
+                      <span className="shrink-0 text-base leading-none">{s.emoji}</span>
+                      <span className="relative">
+                        {s.label}
+                        <span className="absolute bottom-0 left-0 h-px w-0 rounded-full bg-brand-accent transition-[width] duration-300 ease-out group-hover:w-full" />
+                      </span>
                     </Link>
                   ))}
                 </div>
@@ -206,11 +210,12 @@ export default function Header() {
                   key={s.href}
                   href={s.href}
                   className={cn(
-                    'rounded-md px-3 py-2.5 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white',
+                    'flex items-center gap-2.5 rounded-md px-3 py-2.5 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white',
                     s.href === '/uslugi' && 'font-semibold text-brand-accent'
                   )}
                   onClick={() => setMobileOpen(false)}
                 >
+                  <span className="shrink-0 text-base leading-none">{s.emoji}</span>
                   {s.label}
                 </Link>
               ))}
