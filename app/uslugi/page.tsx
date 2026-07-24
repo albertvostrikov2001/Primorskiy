@@ -11,19 +11,57 @@ export const metadata: Metadata = buildMetadata({
   path: '/uslugi',
 })
 
-const services = [
-  { icon: Container, title: 'Хранение контейнеров и грузов', description: 'Размещение гружёных и порожних контейнеров (до 3900 TEU), хранение паллетированных, тарно-штучных и генеральных грузов, в том числе с температурным режимом.', href: '/uslugi/hranenie-konteynerov' },
-  { icon: RefreshCw, title: 'Перетарка, затарка и погрузо-разгрузочные работы', description: 'Перегрузка грузов между контейнерами и автомобилями, загрузка и выгрузка контейнеров, погрузо-разгрузочные работы с применением вилочных погрузчиков и ричстакера.', href: '/uslugi/peretarka-gruzov' },
-  { icon: Truck, title: 'Перевозки и автодоставка', description: 'Доставка контейнеров из порта на терминал и до склада получателя, международные автоперевозки и автодоставка грузов по России собственным автопарком.', href: '/uslugi/konteynernye-perevozki' },
-  { icon: Droplets, title: 'Наливные грузы и флексибаги', description: 'Приём наливного груза с автоцистерн, оборудование контейнеров флексибагами.', href: '/uslugi/nalivnye-gruzy' },
-  { icon: Scale, title: 'Взвешивание груза и контейнеров', description: 'Взвешивание груза и контейнеров с выдачей документов.', href: '/uslugi/vzveshivanie' },
-  { icon: Tag, title: 'Стикеровка и маркировка', description: 'Стикеровка, маркировка груза, сканирование QR-кода.', href: '/uslugi/stikerovka-markirovka' },
-  { icon: Hand, title: 'Ручная и механизированная обработка', description: 'Ручная обработка груза и механизированная с ручной доработкой.', href: '/uslugi/ruchnaya-obrabotka' },
-  { icon: Layers, title: 'Формирование грузовой единицы', description: 'Формирование грузовой единицы с предоставлением поддона и запаллетирование.', href: '/uslugi/formirovanie-gruzovoy-edinicy' },
-  { icon: FileText, title: 'Экспедирование и таможенное оформление', description: 'Транспортно-экспедиционные услуги и таможенное оформление грузов.', href: '/uslugi/ekspedirovanie' },
-  { icon: Warehouse, title: 'Складские услуги', description: 'Сортировка, паллетирование, маркировка, переупаковка грузов.', href: '/uslugi/skladskie-uslugi' },
-  { icon: AlertTriangle, title: 'Нестандартные грузы', description: 'Обработка тяжеловесных и негабаритных грузов. Только по согласованию.', href: '/uslugi/nestandartnye-gruzy' },
+const categories = [
+  {
+    label: 'Хранение',
+    color: 'amber' as const,
+    services: [
+      { icon: Container, title: 'Хранение контейнеров и грузов', description: 'Размещение гружёных и порожних контейнеров (до 3900 TEU), хранение паллетированных, тарно-штучных и генеральных грузов, в том числе с температурным режимом.', href: '/uslugi/hranenie-konteynerov' },
+      { icon: Warehouse, title: 'Складские услуги', description: 'Сортировка, паллетирование, маркировка, переупаковка грузов.', href: '/uslugi/skladskie-uslugi' },
+    ],
+  },
+  {
+    label: 'Обработка грузов',
+    color: 'blue' as const,
+    services: [
+      { icon: RefreshCw, title: 'Перетарка, затарка и погрузо-разгрузочные работы', description: 'Перегрузка грузов между контейнерами и автомобилями, загрузка и выгрузка контейнеров, погрузо-разгрузочные работы с применением вилочных погрузчиков и ричстакера.', href: '/uslugi/peretarka-gruzov' },
+      { icon: Scale, title: 'Взвешивание груза и контейнеров', description: 'Взвешивание груза и контейнеров с выдачей документов.', href: '/uslugi/vzveshivanie' },
+      { icon: Tag, title: 'Стикеровка и маркировка', description: 'Стикеровка, маркировка груза, сканирование QR-кода.', href: '/uslugi/stikerovka-markirovka' },
+      { icon: Hand, title: 'Ручная и механизированная обработка', description: 'Ручная обработка груза и механизированная с ручной доработкой.', href: '/uslugi/ruchnaya-obrabotka' },
+      { icon: Layers, title: 'Формирование грузовой единицы', description: 'Формирование грузовой единицы с предоставлением поддона и запаллетирование.', href: '/uslugi/formirovanie-gruzovoy-edinicy' },
+    ],
+  },
+  {
+    label: 'Логистика и документы',
+    color: 'teal' as const,
+    services: [
+      { icon: Truck, title: 'Перевозки и автодоставка', description: 'Доставка контейнеров из порта на терминал и до склада получателя, международные автоперевозки и автодоставка грузов по России собственным автопарком.', href: '/uslugi/konteynernye-perevozki' },
+      { icon: FileText, title: 'Экспедирование и таможенное оформление', description: 'Транспортно-экспедиционные услуги и таможенное оформление грузов при экспорте и импорте.', href: '/uslugi/ekspedirovanie' },
+    ],
+  },
+  {
+    label: 'Специальные грузы',
+    color: 'orange' as const,
+    services: [
+      { icon: Droplets, title: 'Наливные грузы и флексибаги', description: 'Приём наливного груза с автоцистерн, оборудование контейнеров флексибагами.', href: '/uslugi/nalivnye-gruzy' },
+      { icon: AlertTriangle, title: 'Нестандартные грузы', description: 'Обработка тяжеловесных и негабаритных грузов. Только по согласованию.', href: '/uslugi/nestandartnye-gruzy' },
+    ],
+  },
 ]
+
+const badgeStyles = {
+  amber: 'bg-amber-50 text-amber-800 border-amber-200',
+  blue:  'bg-blue-50  text-blue-800  border-blue-200',
+  teal:  'bg-teal-50  text-teal-800  border-teal-200',
+  orange: 'bg-orange-50 text-orange-800 border-orange-200',
+}
+
+const dotStyles = {
+  amber: 'bg-amber-400',
+  blue:  'bg-blue-400',
+  teal:  'bg-teal-400',
+  orange: 'bg-orange-400',
+}
 
 export default function UslugiPage() {
   const crumbs = [{ name: 'Главная', url: '/' }, { name: 'Услуги', url: '/uslugi' }]
@@ -34,10 +72,7 @@ export default function UslugiPage() {
 
       <section className="bg-brand-dark py-12">
         <div className="container-site">
-          <Breadcrumbs
-            items={[{ label: 'Услуги' }]}
-            className="mb-4 text-white"
-          />
+          <Breadcrumbs items={[{ label: 'Услуги' }]} className="mb-4 text-white" />
           <h1 className="text-white">Услуги контейнерного терминала</h1>
           <p className="mt-3 max-w-2xl text-lg text-white/70">
             Полный спектр терминальных операций в Новороссийске: от хранения и перетарки до международных перевозок и таможенного оформления
@@ -47,23 +82,41 @@ export default function UslugiPage() {
 
       <section className="section-py bg-white">
         <div className="container-site">
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((s) => (
-              <Link
-                key={s.href}
-                href={s.href}
-                className="card group flex flex-col p-5 transition-all hover:-translate-y-1"
-              >
-                <div className="icon-circle mb-4 group-hover:bg-brand-accent group-hover:text-white transition-colors">
-                  <s.icon className="h-5 w-5" aria-hidden="true" />
+          <div className="flex flex-col gap-10">
+            {categories.map((cat) => (
+              <div key={cat.label}>
+                {/* Category header */}
+                <div className="mb-4 flex items-center gap-3">
+                  <span className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wider ${badgeStyles[cat.color]}`}>
+                    <span className={`inline-block h-1.5 w-1.5 rounded-full ${dotStyles[cat.color]}`} aria-hidden="true" />
+                    {cat.label}
+                  </span>
+                  <div className="h-px flex-1 bg-surface-border" />
                 </div>
-                <h2 className="mb-2 text-base font-semibold">{s.title}</h2>
-                <p className="mb-3 flex-1 text-sm text-text-secondary">{s.description}</p>
-                <div className="flex items-center gap-1 text-sm font-medium text-brand-accent">
-                  Подробнее
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+
+                {/* Services grid */}
+                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                  {cat.services.map((s) => (
+                    <Link
+                      key={s.href}
+                      href={s.href}
+                      className="group flex items-start gap-4 rounded-xl border border-surface-border bg-white p-4 transition-all hover:-translate-y-0.5 hover:border-brand-accent/40 hover:shadow-md"
+                    >
+                      <div className="icon-circle mt-0.5 shrink-0 transition-colors group-hover:bg-brand-accent group-hover:text-white">
+                        <s.icon className="h-4 w-4" aria-hidden="true" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <h2 className="mb-1 text-sm font-semibold leading-snug text-text-primary">{s.title}</h2>
+                        <p className="text-xs leading-relaxed text-text-secondary">{s.description}</p>
+                        <div className="mt-2 flex items-center gap-1 text-xs font-medium text-brand-accent">
+                          Подробнее
+                          <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
