@@ -13,6 +13,14 @@ export const metadata: Metadata = buildMetadata({
 
 const categories = [
   {
+    label: 'Логистика и документы',
+    color: 'teal' as const,
+    services: [
+      { icon: Truck, title: 'Перевозки и автодоставка', description: 'Доставка контейнеров из порта на терминал и до склада получателя, международные автоперевозки и автодоставка грузов по России собственным автопарком.', href: '/uslugi/konteynernye-perevozki' },
+      { icon: FileText, title: 'Экспедирование и таможенное оформление', description: 'Транспортно-экспедиционные услуги и таможенное оформление грузов при экспорте и импорте.', href: '/uslugi/ekspedirovanie' },
+    ],
+  },
+  {
     label: 'Хранение',
     color: 'amber' as const,
     services: [
@@ -29,14 +37,6 @@ const categories = [
       { icon: Tag, title: 'Стикеровка и маркировка', description: 'Стикеровка, маркировка груза, сканирование QR-кода.', href: '/uslugi/stikerovka-markirovka' },
       { icon: Hand, title: 'Ручная и механизированная обработка', description: 'Ручная обработка груза и механизированная с ручной доработкой.', href: '/uslugi/ruchnaya-obrabotka' },
       { icon: Layers, title: 'Формирование грузовой единицы', description: 'Формирование грузовой единицы с предоставлением поддона и запаллетирование.', href: '/uslugi/formirovanie-gruzovoy-edinicy' },
-    ],
-  },
-  {
-    label: 'Логистика и документы',
-    color: 'teal' as const,
-    services: [
-      { icon: Truck, title: 'Перевозки и автодоставка', description: 'Доставка контейнеров из порта на терминал и до склада получателя, международные автоперевозки и автодоставка грузов по России собственным автопарком.', href: '/uslugi/konteynernye-perevozki' },
-      { icon: FileText, title: 'Экспедирование и таможенное оформление', description: 'Транспортно-экспедиционные услуги и таможенное оформление грузов при экспорте и импорте.', href: '/uslugi/ekspedirovanie' },
     ],
   },
   {
