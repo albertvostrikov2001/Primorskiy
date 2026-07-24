@@ -1,57 +1,44 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { MapPin, Container, Cog, Package, Users, Calculator } from 'lucide-react'
+import { MapPin, Container, Cog, Package, Calculator } from 'lucide-react'
 import { company } from '@/config/company'
 
 const advantages = [
   {
     icon: MapPin,
-    stat: '~10',
-    unit: 'км до порта',
+    stat: '~10 км',
+    unit: 'до порта',
     title: 'Близость к морскому порту Новороссийска',
-    description:
-      'Расстояние до морского порта сокращает транспортные плечи и упрощает логистику для экспортных и импортных грузов. Контейнер с корабля оказывается на терминале в течение дня.',
+    description: 'Контейнер с корабля оказывается на терминале в течение дня.',
   },
   {
     icon: Container,
-    stat: '3900',
-    unit: 'TEU',
+    stat: '3900 TEU',
+    unit: 'вместимость',
     title: `Вместимость площадки — ${company.capacity}`,
-    description:
-      'Терминал принимает гружёные и порожние контейнеры в значительных объёмах. Это позволяет работать с партиями любого размера без ограничений по количеству.',
+    description: 'Работаем с партиями любого объёма без ограничений по количеству.',
   },
   {
     icon: Cog,
     stat: '4+',
     unit: 'типа операций',
     title: 'Полный комплекс операций на одной площадке',
-    description:
-      'Хранение, перетарка, затарка, растарка и погрузо-разгрузочные работы выполняются на одной площадке. Груз не перемещается между подрядчиками — это экономит время и снижает риски.',
+    description: 'Хранение, перетарка и ПРР — без перемещения между подрядчиками.',
   },
   {
     icon: Package,
     stat: null,
     unit: 'техника',
     title: 'Терминальная техника для любых задач',
-    description:
-      'Вилочные погрузчики, ричстакер, контейнеровозы и погрузчики с боковым спредером — собственный парк техники для работы с контейнерами и генеральными грузами.',
-  },
-  {
-    icon: Users,
-    stat: '1',
-    unit: 'менеджер',
-    title: 'Единая точка коммуникации',
-    description:
-      'Один менеджер сопровождает задачу от первого обращения до выдачи груза. Никаких переключений между отделами и подрядчиками — всё решается напрямую.',
+    description: 'Погрузчики, ричстакер, контейнеровозы — собственный парк.',
   },
   {
     icon: Calculator,
     stat: null,
     unit: 'расчёт',
     title: 'Индивидуальный расчёт под задачу',
-    description:
-      'Стоимость рассчитывается под конкретный запрос: тип и объём груза, сроки хранения, набор операций. Стандартных прайсов нет — только цена под вашу задачу.',
+    description: 'Цена формируется под тип груза, объём и набор операций.',
   },
 ]
 
@@ -84,16 +71,15 @@ export default function WhyUsSection() {
       <style>{`
         .why-row {
           opacity: 0;
-          transition: opacity 0.6s ease, transform 0.6s ease;
+          transition: opacity 0.55s ease, transform 0.55s ease;
         }
-        .why-row.from-left  { transform: translateX(-40px); }
-        .why-row.from-right { transform: translateX(40px); }
+        .why-row.from-left  { transform: translateX(-32px); }
+        .why-row.from-right { transform: translateX(32px); }
         .why-row.in-view    { opacity: 1; transform: translateX(0); }
-        .why-row:nth-child(2) { transition-delay: 0.05s; }
-        .why-row:nth-child(3) { transition-delay: 0.05s; }
-        .why-row:nth-child(4) { transition-delay: 0.05s; }
-        .why-row:nth-child(5) { transition-delay: 0.05s; }
-        .why-row:nth-child(6) { transition-delay: 0.05s; }
+        .why-row:nth-child(2) { transition-delay: 0.06s; }
+        .why-row:nth-child(3) { transition-delay: 0.12s; }
+        .why-row:nth-child(4) { transition-delay: 0.18s; }
+        .why-row:nth-child(5) { transition-delay: 0.24s; }
         @media (prefers-reduced-motion: reduce) {
           .why-row { opacity: 1; transform: none; transition: none; }
         }
@@ -113,40 +99,43 @@ export default function WhyUsSection() {
           </h2>
         </div>
 
-        {/* Alternating rows */}
-        <div className="flex flex-col gap-px overflow-hidden rounded-2xl border border-surface-border">
+        {/* Compact alternating rows */}
+        <div className="flex flex-col gap-px overflow-hidden rounded-2xl border border-surface-border bg-surface-border">
           {advantages.map((adv, i) => {
             const isEven = i % 2 === 0
             return (
               <div
                 key={i}
                 ref={(el) => { rowRefs.current[i] = el }}
-                className={`why-row flex flex-col sm:flex-row ${isEven ? 'from-left' : 'from-right sm:flex-row-reverse'}`}
+                className={`why-row flex min-h-[72px] flex-col sm:flex-row ${isEven ? 'from-left' : 'from-right sm:flex-row-reverse'}`}
               >
                 {/* Dark visual block */}
                 <div
-                  className="flex shrink-0 flex-col items-center justify-center gap-2 p-8 sm:w-52"
+                  className="flex shrink-0 flex-row items-center justify-center gap-3 px-5 py-4 sm:w-[100px] sm:flex-col sm:gap-1.5 sm:px-0"
                   style={{
                     background: isEven
                       ? 'linear-gradient(135deg,#0f1d3a 0%,#1a3a6e 100%)'
                       : 'linear-gradient(135deg,#162d56 0%,#0f1d3a 100%)',
                   }}
                 >
-                  <adv.icon className="h-7 w-7 text-brand-accent" aria-hidden="true" />
+                  <adv.icon className="h-5 w-5 shrink-0 text-brand-accent" aria-hidden="true" />
                   {adv.stat && (
                     <div className="text-center">
-                      <div className="text-3xl font-bold leading-none text-white">
-                        {adv.stat}
-                      </div>
-                      <div className="mt-1 text-xs text-white/40">{adv.unit}</div>
+                      <div className="text-sm font-bold leading-none text-white">{adv.stat}</div>
+                      <div className="mt-0.5 text-[10px] leading-tight text-white/40">{adv.unit}</div>
                     </div>
+                  )}
+                  {!adv.stat && (
+                    <div className="text-[10px] leading-tight text-white/40">{adv.unit}</div>
                   )}
                 </div>
 
                 {/* Text block */}
-                <div className="flex flex-1 flex-col justify-center bg-white p-8">
-                  <h3 className="mb-2 text-lg font-bold text-text-primary">{adv.title}</h3>
-                  <p className="max-w-xl text-sm leading-relaxed text-text-secondary">
+                <div className="flex flex-1 flex-col justify-center bg-white px-6 py-4">
+                  <h3 className="mb-0.5 text-sm font-bold leading-snug text-text-primary">
+                    {adv.title}
+                  </h3>
+                  <p className="text-xs leading-relaxed text-text-secondary">
                     {adv.description}
                   </p>
                 </div>
