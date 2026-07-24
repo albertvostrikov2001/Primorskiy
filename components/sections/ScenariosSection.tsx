@@ -12,7 +12,7 @@ const scenarios = [
     num: '01',
     icon: Container,
     badge: 'Хранение',
-    title: 'Нужно хранение контейнера или груза',
+    title: 'Хранение контейнера или груза',
     description:
       'Размещаем гружёные и порожние контейнеры на терминальной площадке (до 3900 TEU), а также паллетированные, тарно-штучные и генеральные грузы — в том числе с температурным режимом.',
     href: '/uslugi/hranenie-konteynerov',
@@ -23,7 +23,7 @@ const scenarios = [
     num: '02',
     icon: FileText,
     badge: 'Логистика',
-    title: 'Нужно экспедирование или таможня',
+    title: 'Экспедирование и таможенное оформление',
     description:
       'Организуем транспортно-экспедиционное обслуживание и таможенное оформление грузов при экспорте и импорте через порт Новороссийска. Возможна комплексная услуга: хранение + перевозка + таможня.',
     href: '/uslugi/ekspedirovanie',
@@ -34,7 +34,7 @@ const scenarios = [
     num: '03',
     icon: RefreshCw,
     badge: 'Обработка',
-    title: 'Нужна перетарка или погрузо-разгрузочные работы',
+    title: 'Перетарка и погрузо-разгрузочные работы',
     description:
       'Перегружаем груз из контейнера в автомобиль, между контейнерами или выполняем затарку и растарку. Для ПРР используем вилочные погрузчики и ричстакер.',
     href: '/uslugi/peretarka-gruzov',
@@ -73,10 +73,10 @@ export default function ScenariosSection() {
           className="overflow-hidden rounded-2xl border border-surface-border shadow-sm"
           style={{ display: 'flex' }}
         >
-          {/* Dark sidebar */}
+          {/* Sidebar */}
           <div
-            className="flex shrink-0 flex-col gap-1 p-3"
-            style={{ background: 'linear-gradient(160deg,#0f1d3a 0%,#162d56 100%)', width: 220 }}
+            className="flex shrink-0 flex-col gap-1 border-r border-surface-border bg-surface-gray p-3"
+            style={{ width: 260 }}
             role="tablist"
             aria-label="Сценарии задач"
           >
@@ -89,24 +89,24 @@ export default function ScenariosSection() {
                 id={`scenario-tab-${s.id}`}
                 onClick={() => setActive(s.id)}
                 className={cn(
-                  'flex items-start gap-2.5 rounded-lg px-3 py-2.5 text-left transition-all duration-200',
+                  'flex items-start gap-3 rounded-xl px-4 py-3.5 text-left transition-all duration-200',
                   active === s.id
-                    ? 'bg-brand-accent/20'
-                    : 'hover:bg-white/5'
+                    ? 'bg-white shadow-sm'
+                    : 'hover:bg-white/60'
                 )}
               >
                 <span
                   className={cn(
-                    'mt-0.5 shrink-0 text-xs font-bold tabular-nums',
-                    active === s.id ? 'text-brand-accent' : 'text-white/25'
+                    'mt-0.5 shrink-0 text-sm font-bold tabular-nums',
+                    active === s.id ? 'text-brand-accent' : 'text-text-muted'
                   )}
                 >
                   {s.num}
                 </span>
                 <span
                   className={cn(
-                    'text-xs leading-snug',
-                    active === s.id ? 'font-semibold text-white' : 'text-white/50'
+                    'text-sm leading-snug',
+                    active === s.id ? 'font-semibold text-text-primary' : 'text-text-secondary'
                   )}
                 >
                   {s.title}
@@ -130,10 +130,10 @@ export default function ScenariosSection() {
               </span>
             </div>
 
-            <h3 className="mb-3 text-xl font-bold leading-snug text-text-primary">
+            <h3 className="mb-3 text-2xl font-bold leading-snug text-text-primary">
               {current.title}
             </h3>
-            <p className="mb-7 max-w-lg leading-relaxed text-text-secondary">
+            <p className="mb-7 max-w-lg text-base leading-relaxed text-text-secondary">
               {current.description}
             </p>
 
