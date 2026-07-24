@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import { ArrowRight, Container, FileText, RefreshCw, AlertTriangle } from 'lucide-react'
 import { SectionTitle } from '@/components/ui/SectionTitle'
@@ -53,9 +53,33 @@ const scenarios = [
   },
 ]
 
+const INTERVAL_MS = 4000
+
 export default function ScenariosSection() {
   const [active, setActive] = useState<string>(scenarios[0].id)
   const current = scenarios.find((s) => s.id === active) ?? scenarios[0]
+  const paused = useRef(false)
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
+  const advance = useCallback(() => {
+    if (paused.current) return
+    setActive((prev) => {
+      const idx = scenarios.findIndex((s) => s.id === prev)
+      return scenarios[(idx + 1) % scenarios.length].id
+    })
+  }, [])
+
+  useEffect(() => {
+    intervalRef.current = setInterval(advance, INTERVAL_MS)
+    return () => { if (intervalRef.current) clearInterval(intervalRef.current) }
+  }, [advance])
+
+  const handleSelect = (id: string) => {
+    setActive(id)
+    // Reset the interval so it starts counting from now
+    if (intervalRef.current) clearInterval(intervalRef.current)
+    intervalRef.current = setInterval(advance, INTERVAL_MS)
+  }
 
   return (
     <section className="section-py bg-slate-50" aria-labelledby="scenarios-heading">
@@ -72,6 +96,8 @@ export default function ScenariosSection() {
         <div
           className="overflow-hidden rounded-2xl border border-surface-border shadow-sm"
           style={{ display: 'flex' }}
+          onMouseEnter={() => { paused.current = true }}
+          onMouseLeave={() => { paused.current = false }}
         >
           {/* Sidebar */}
           <div
@@ -87,7 +113,7 @@ export default function ScenariosSection() {
                 aria-selected={active === s.id}
                 aria-controls={`scenario-panel-${s.id}`}
                 id={`scenario-tab-${s.id}`}
-                onClick={() => setActive(s.id)}
+                onClick={() => handleSelect(s.id)}
                 className={cn(
                   'flex items-start gap-3 rounded-xl px-4 py-3.5 text-left transition-all duration-200',
                   active === s.id
@@ -160,7 +186,7 @@ export default function ScenariosSection() {
           {scenarios.map((s) => (
             <button
               key={s.id}
-              onClick={() => setActive(s.id)}
+              onClick={() => handleSelect(s.id)}
               className={cn(
                 'flex items-center gap-3 rounded-xl border px-4 py-3 text-left text-sm font-medium transition-all',
                 active === s.id
