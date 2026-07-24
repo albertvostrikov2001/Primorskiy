@@ -7,6 +7,8 @@ const equipment = [
   {
     icon: Forklift,
     name: 'Вилочные погрузчики',
+    image: '/images/forklift-loading.jpg',
+    imageAlt: 'Вилочный погрузчик загружает груз в контейнер',
     scenarios: [
       'Работа с паллетированными грузами',
       'Загрузка и выгрузка крытых фургонов',
@@ -15,28 +17,34 @@ const equipment = [
   },
   {
     icon: Container,
-    name: 'Контейнеровозы',
+    name: 'Ричстакер',
+    image: '/images/reach-stacker.jpg',
+    imageAlt: 'Ричстакер SISU поднимает контейнер на терминале',
     scenarios: [
-      'Горизонтальное перемещение контейнеров',
-      'Расстановка контейнеров на площадке',
+      'Подъём и перестановка контейнеров',
+      'Штабелирование в несколько ярусов',
       'Подача контейнеров под загрузку',
     ],
   },
   {
     icon: Wrench,
-    name: 'Автокраны',
+    name: 'Техника для тяжёлых грузов',
+    image: '/images/peretarka-forklift.jpg',
+    imageAlt: 'Погрузка крупногабаритного груза в автомобиль',
     scenarios: [
-      'Подъём и перестановка тяжёлых контейнеров',
       'Работа с негабаритными грузами',
-      'Операции при ограниченном пространстве',
+      'Перемещение тяжёлых и нестандартных грузов',
+      'Операции с промышленным оборудованием',
     ],
   },
   {
     icon: Truck,
-    name: 'Погрузчики со спредером',
+    name: 'Погрузчики с захватом',
+    image: '/images/storage-warehouse.jpg',
+    imageAlt: 'Погрузчик STILL с захватом на складе терминала',
     scenarios: [
-      'Захват контейнеров без повреждений',
-      'Штабелирование контейнеров в несколько ярусов',
+      'Захват рулонных и цилиндрических грузов',
+      'Работа без повреждения упаковки',
       'Точное позиционирование при перетарке',
     ],
   },
@@ -64,24 +72,38 @@ export default function EquipmentSection() {
 
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {equipment.map((eq, i) => (
-            <div key={i} className="card rounded-xl border border-surface-border p-5">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-dark/10 text-brand-dark">
-                <eq.icon className="h-5 w-5" aria-hidden="true" />
+            <div key={i} className="overflow-hidden rounded-xl border border-surface-border">
+              {/* Photo */}
+              <div className="relative aspect-[4/3] bg-surface-gray">
+                <Image
+                  src={eq.image}
+                  alt={eq.imageAlt}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover"
+                />
               </div>
-              <h3 className="mb-3 text-base font-semibold">{eq.name}</h3>
-              <ul className="space-y-1.5">
-                {eq.scenarios.map((s, j) => (
-                  <li key={j} className="flex items-start gap-2 text-sm text-text-secondary">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-accent" aria-hidden="true" />
-                    {s}
-                  </li>
-                ))}
-              </ul>
+
+              {/* Card body */}
+              <div className="p-5">
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-dark/10 text-brand-dark">
+                  <eq.icon className="h-4 w-4" aria-hidden="true" />
+                </div>
+                <h3 className="mb-3 text-base font-semibold">{eq.name}</h3>
+                <ul className="space-y-1.5">
+                  {eq.scenarios.map((s, j) => (
+                    <li key={j} className="flex items-start gap-2 text-sm text-text-secondary">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-accent" aria-hidden="true" />
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Equipment photo */}
+        {/* Equipment banner */}
         <div className="relative mt-8 overflow-hidden rounded-2xl" style={{ aspectRatio: '16/5' }}>
           <Image
             src="/images/reach-stacker.jpg"
