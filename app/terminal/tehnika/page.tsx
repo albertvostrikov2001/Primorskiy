@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { buildMetadata } from '@/lib/seo'
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { breadcrumbJsonLd } from '@/lib/seo/jsonld'
@@ -15,24 +16,32 @@ const equipment = [
   {
     icon: Container,
     name: 'Ричстакер',
+    image: '/images/reach-stacker.jpg',
+    imageAlt: 'Ричстакер SISU поднимает контейнер на терминале',
     description: 'Специализированная машина для штабелирования контейнеров в несколько ярусов. Обеспечивает высокую плотность хранения и точное позиционирование.',
     usages: ['Штабелирование контейнеров', 'Точная подача при перетарке', 'Перестановка на площадке'],
   },
   {
     icon: Cog,
     name: 'Автокран',
+    image: '/images/peretarka-forklift.jpg',
+    imageAlt: 'Подъём тяжёлого груза на терминале',
     description: 'Используется для подъёма тяжёлых контейнеров, негабаритных грузов и работы в ограниченном пространстве.',
     usages: ['Подъём и перестановка контейнеров', 'Работа с тяжеловесными грузами', 'Операции в труднодоступных зонах'],
   },
   {
     icon: Forklift,
     name: 'Вилочные погрузчики',
+    image: '/images/forklift-loading.jpg',
+    imageAlt: 'Вилочный погрузчик STILL загружает груз в контейнер',
     description: 'Применяются для работы с паллетированными грузами, загрузки и выгрузки фургонов, перемещения груза по площадке.',
     usages: ['Загрузка и выгрузка автомобилей', 'Паллетирование и сортировка', 'Перемещение грузов по территории'],
   },
   {
     icon: Truck,
     name: 'Автопарк грузовой техники',
+    image: '/images/trucking-transport.jpg',
+    imageAlt: 'Грузовик MAN TGX с грузом на терминале',
     description: 'Собственный парк грузовых автомобилей для перевозки контейнеров и грузов — из порта на терминал, до склада получателя и в международном сообщении.',
     usages: ['Доставка контейнеров из порта', 'Автодоставка до склада получателя', 'Международные перевозки'],
   },
@@ -57,26 +66,36 @@ export default function TehnikaPage() {
         <div className="container-site">
           <div className="grid gap-8 md:grid-cols-2">
             {equipment.map((eq, i) => (
-              <div key={i} className="card p-6">
-                <div className="mb-4 flex items-center gap-3">
-                  <div className="icon-circle">
-                    <eq.icon className="h-5 w-5" aria-hidden="true" />
-                  </div>
-                  <h2 className="text-lg font-bold">{eq.name}</h2>
+              <div key={i} className="card overflow-hidden p-0">
+                {/* Photo */}
+                <div className="relative aspect-video w-full bg-surface-gray">
+                  <Image
+                    src={eq.image}
+                    alt={eq.imageAlt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
                 </div>
-                <p className="mb-4 text-sm leading-relaxed text-text-secondary">{eq.description}</p>
-                <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-text-muted">Сценарии применения</h3>
-                <ul className="space-y-1.5">
-                  {eq.usages.map((u, j) => (
-                    <li key={j} className="flex items-start gap-2 text-sm text-text-secondary">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-accent" aria-hidden="true" />
-                      {u}
-                    </li>
-                  ))}
-                </ul>
 
-                <div className="mt-4 aspect-video rounded-lg bg-surface-gray-medium flex items-center justify-center text-xs text-text-muted">
-                  Фото техники
+                {/* Content */}
+                <div className="p-6">
+                  <div className="mb-4 flex items-center gap-3">
+                    <div className="icon-circle">
+                      <eq.icon className="h-5 w-5" aria-hidden="true" />
+                    </div>
+                    <h2 className="text-lg font-bold">{eq.name}</h2>
+                  </div>
+                  <p className="mb-4 text-sm leading-relaxed text-text-secondary">{eq.description}</p>
+                  <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-text-muted">Сценарии применения</h3>
+                  <ul className="space-y-1.5">
+                    {eq.usages.map((u, j) => (
+                      <li key={j} className="flex items-start gap-2 text-sm text-text-secondary">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-accent" aria-hidden="true" />
+                        {u}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
