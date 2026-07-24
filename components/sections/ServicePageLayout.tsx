@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { SectionTitle } from '@/components/ui/SectionTitle'
@@ -17,6 +18,11 @@ interface ServiceStep {
   description: string
 }
 
+export interface ServicePhoto {
+  src: string
+  alt: string
+}
+
 export interface ServicePageProps {
   title: string
   h1: string
@@ -32,6 +38,7 @@ export interface ServicePageProps {
   serviceValue: string
   path: string
   disclaimer?: string
+  images?: ServicePhoto[]
 }
 
 export default function ServicePageLayout({
@@ -48,6 +55,7 @@ export default function ServicePageLayout({
   serviceValue,
   path,
   disclaimer,
+  images,
 }: ServicePageProps) {
   const breadcrumbs = [
     { name: 'Услуги', url: '/uslugi' },
@@ -170,23 +178,25 @@ export default function ServicePageLayout({
                 </ol>
               </div>
 
-              {/* Image placeholder */}
-              <div>
-                <SectionTitle tag="h2" title="Фотографии" className="mb-4" />
-                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                  {[1, 2, 3].map((n) => (
-                    <div
-                      key={n}
-                      className="aspect-video rounded-lg bg-surface-gray-medium flex items-center justify-center text-xs text-text-muted"
-                    >
-                      Фото {n}
-                    </div>
-                  ))}
+              {/* Photos */}
+              {images && images.length > 0 && (
+                <div>
+                  <SectionTitle tag="h2" title="Фотографии" className="mb-4" />
+                  <div className={`grid gap-3 ${images.length === 1 ? '' : images.length === 2 ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-3'}`}>
+                    {images.map((img, idx) => (
+                      <div key={idx} className="relative aspect-video overflow-hidden rounded-lg bg-surface-gray">
+                        <Image
+                          src={img.src}
+                          alt={img.alt}
+                          fill
+                          sizes="(max-width: 640px) 50vw, 33vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <p className="mt-2 text-xs text-text-muted">
-                  Реальные фотографии будут добавлены после предоставления заказчиком.
-                </p>
-              </div>
+              )}
             </div>
 
             {/* Sidebar: form */}

@@ -71,6 +71,11 @@ export default function NestandartnyeGruzyPage() {
       serviceValue="nonstandard"
       path="/uslugi/nestandartnye-gruzy"
       disclaimer="Работа с нестандартными грузами — только по предварительному согласованию"
+      images={[
+        { src: '/images/nonstandard-flatrack.jpg', alt: 'Кабельные катушки на флэтрэке MAERSK' },
+        { src: '/images/nonstandard-reels.jpg',    alt: 'Крупные кабельные катушки на терминальной площадке' },
+        { src: '/images/equipment-forklift.jpg',   alt: 'Негабаритные катушки у контейнеров' },
+      ]}
     />
   )
 }

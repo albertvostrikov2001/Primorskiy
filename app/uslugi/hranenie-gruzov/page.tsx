@@ -77,6 +77,11 @@ export default function HranenieGruzovPage() {
       ]}
       serviceValue="storage-cargo"
       path="/uslugi/hranenie-gruzov"
+      images={[
+        { src: '/images/cargo-rolls.jpg',   alt: 'Рулонный груз в контейнере' },
+        { src: '/images/storage-coils.jpg', alt: 'Стальные рулоны в контейнере' },
+        { src: '/images/cargo-pipes.jpg',   alt: 'Трубы и профиль в контейнере' },
+      ]}
     />
   )
 }

@@ -68,6 +68,11 @@ export default function SkladskieUslugiPage() {
       ]}
       serviceValue="warehouse"
       path="/uslugi/skladskie-uslugi"
+      images={[
+        { src: '/images/storage-warehouse.jpg', alt: 'Погрузчик STILL с захватом на складе' },
+        { src: '/images/forklift-clamp.jpg',    alt: 'Погрузчик удерживает крупный рулонный груз' },
+        { src: '/images/forklift-loading.jpg',  alt: 'Погрузка товара в контейнер погрузчиком' },
+      ]}
     />
   )
 }

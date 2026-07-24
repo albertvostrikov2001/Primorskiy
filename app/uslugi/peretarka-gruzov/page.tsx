@@ -80,6 +80,11 @@ export default function PeretarkaGruzovPage() {
       ]}
       serviceValue="retarka"
       path="/uslugi/peretarka-gruzov"
+      images={[
+        { src: '/images/cargo-repack.jpg',      alt: 'Погрузка груза в автомобиль погрузчиком' },
+        { src: '/images/peretarka-forklift.jpg', alt: 'Погрузчик перемещает крупный ящик' },
+        { src: '/images/team-operations.jpg',   alt: 'Загрузка металлических рулонов на платформу' },
+      ]}
     />
   )
 }

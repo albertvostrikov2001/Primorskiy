@@ -84,8 +84,8 @@ export default function EquipmentSection() {
         {/* Equipment photo */}
         <div className="relative mt-8 overflow-hidden rounded-2xl" style={{ aspectRatio: '16/5' }}>
           <Image
-            src="/images/equipment-forklift.jpg"
-            alt="Вилочный погрузчик на терминальной площадке Приморский"
+            src="/images/reach-stacker.jpg"
+            alt="Ричстакер SISU на терминальной площадке Приморский"
             fill
             quality={80}
             className="object-cover object-center"

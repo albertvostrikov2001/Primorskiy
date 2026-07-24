@@ -79,6 +79,11 @@ export default function HranenieKonteynerovPage() {
       ]}
       serviceValue="storage-containers"
       path="/uslugi/hranenie-konteynerov"
+      images={[
+        { src: '/images/hero-terminal.jpg',   alt: 'Терминальная площадка с контейнерами в Новороссийске' },
+        { src: '/images/storage-coils.jpg',   alt: 'Стальные рулоны в контейнере' },
+        { src: '/images/cargo-rolls.jpg',     alt: 'Рулонный груз в контейнере' },
+      ]}
     />
   )
 }

@@ -72,6 +72,10 @@ export default function KonteynernyePerevozkaPage() {
       ]}
       serviceValue="transportation"
       path="/uslugi/konteynernye-perevozki"
+      images={[
+        { src: '/images/trucking-transport.jpg', alt: 'Грузовик MAN TGX с негабаритным грузом на терминале' },
+        { src: '/images/customs-clearance.jpg',  alt: 'Грузовик с обрешёткой на терминальной площадке' },
+      ]}
     />
   )
 }

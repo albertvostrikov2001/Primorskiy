@@ -70,6 +70,10 @@ export default function NalivnyeGruzyPage() {
       ]}
       serviceValue="liquid"
       path="/uslugi/nalivnye-gruzy"
+      images={[
+        { src: '/images/about-terminal.jpg',  alt: 'Флексибаг установлен в контейнере' },
+        { src: '/images/flexibag-inside.jpg', alt: 'Внутренность контейнера с флексибагом' },
+      ]}
     />
   )
 }

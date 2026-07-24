@@ -73,6 +73,10 @@ export default function EkspedirovaniePage() {
       ]}
       serviceValue="forwarding"
       path="/uslugi/ekspedirovanie"
+      images={[
+        { src: '/images/customs-clearance.jpg',  alt: 'Грузовик с обрешёткой — экспедирование грузов' },
+        { src: '/images/cargo-pipes.jpg',        alt: 'Груз в контейнере при отправке из порта' },
+      ]}
     />
   )
 }
