@@ -9,15 +9,15 @@ import { trackEvent } from '@/lib/analytics'
 import { Button } from '@/components/ui/Button'
 
 const services = [
-  { label: 'Все услуги', href: '/uslugi', emoji: '📋' },
-  { label: 'Хранение контейнеров', href: '/uslugi/hranenie-konteynerov', emoji: '📦' },
-  { label: 'Хранение грузов', href: '/uslugi/hranenie-gruzov', emoji: '🗃️' },
-  { label: 'Перетарка грузов', href: '/uslugi/peretarka-gruzov', emoji: '🔄' },
-  { label: 'Затарка и растарка', href: '/uslugi/zatarka-i-rastarka', emoji: '📥' },
-  { label: 'Погрузочно-разгрузочные работы', href: '/uslugi/pogruzochno-razgruzochnye-raboty', emoji: '🏗️' },
-  { label: 'Контейнерные перевозки', href: '/uslugi/konteynernye-perevozki', emoji: '🚛' },
-  { label: 'Складские услуги', href: '/uslugi/skladskie-uslugi', emoji: '🏭' },
-  { label: 'Нестандартные грузы', href: '/uslugi/nestandartnye-gruzy', emoji: '⚙️' },
+  { label: 'Все услуги',                              href: '/uslugi',                          emoji: '📋' },
+  { label: 'Перевозки и автодоставка',                href: '/uslugi/konteynernye-perevozki',   emoji: '🚛' },
+  { label: 'Экспедирование и таможня',                href: '/uslugi/ekspedirovanie',            emoji: '📄' },
+  { label: 'Хранение грузов и контейнеров',           href: '/uslugi/hranenie-konteynerov',     emoji: '📦' },
+  { label: 'Складские услуги',                        href: '/uslugi/skladskie-uslugi',          emoji: '🏭' },
+  { label: 'Перетарка и погрузо-разгрузочные работы', href: '/uslugi/peretarka-gruzov',         emoji: '🔄' },
+  { label: 'Стикеровка и маркировка',                 href: '/uslugi/stikerovka-markirovka',    emoji: '🏷️' },
+  { label: 'Наливные грузы и флексибаги',             href: '/uslugi/nalivnye-gruzy',            emoji: '💧' },
+  { label: 'Нестандартные грузы',                     href: '/uslugi/nestandartnye-gruzy',       emoji: '⚙️' },
 ]
 
 const navLinks = [

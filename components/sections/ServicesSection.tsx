@@ -4,12 +4,12 @@ import { ArrowUpRight } from 'lucide-react'
 
 const services = [
   {
-    title: 'Хранение контейнеров и грузов',
+    title: 'Хранение грузов и контейнеров',
     img: '/images/hero-terminal.jpg',
     href: '/uslugi/hranenie-konteynerov',
   },
   {
-    title: 'Перетарка, затарка и погрузо-разгрузочные работы',
+    title: 'Перетарка и погрузо-разгрузочные работы',
     img: '/images/cargo-repack.jpg',
     href: '/uslugi/peretarka-gruzov',
   },
