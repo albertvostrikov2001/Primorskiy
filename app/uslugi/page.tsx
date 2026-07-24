@@ -16,50 +16,50 @@ const categories = [
     label: 'Логистика и документы',
     color: 'teal' as const,
     services: [
-      { icon: Truck, title: 'Перевозки и автодоставка', description: 'Доставка контейнеров из порта на терминал и до склада получателя, международные автоперевозки и автодоставка грузов по России собственным автопарком.', href: '/uslugi/konteynernye-perevozki' },
-      { icon: FileText, title: 'Экспедирование и таможенное оформление', description: 'Транспортно-экспедиционные услуги и таможенное оформление грузов при экспорте и импорте.', href: '/uslugi/ekspedirovanie' },
+      { icon: Truck,     title: 'Перевозки и автодоставка',              href: '/uslugi/konteynernye-perevozki' },
+      { icon: FileText,  title: 'Экспедирование и таможенное оформление', href: '/uslugi/ekspedirovanie' },
     ],
   },
   {
     label: 'Хранение',
     color: 'amber' as const,
     services: [
-      { icon: Container, title: 'Хранение контейнеров и грузов', description: 'Размещение гружёных и порожних контейнеров (до 3900 TEU), хранение паллетированных, тарно-штучных и генеральных грузов, в том числе с температурным режимом.', href: '/uslugi/hranenie-konteynerov' },
-      { icon: Warehouse, title: 'Складские услуги', description: 'Сортировка, паллетирование, маркировка, переупаковка грузов.', href: '/uslugi/skladskie-uslugi' },
+      { icon: Container, title: 'Хранение контейнеров и грузов', href: '/uslugi/hranenie-konteynerov' },
+      { icon: Warehouse, title: 'Складские услуги',               href: '/uslugi/skladskie-uslugi' },
     ],
   },
   {
     label: 'Обработка грузов',
     color: 'blue' as const,
     services: [
-      { icon: RefreshCw, title: 'Перетарка, затарка и погрузо-разгрузочные работы', description: 'Перегрузка грузов между контейнерами и автомобилями, загрузка и выгрузка контейнеров, погрузо-разгрузочные работы с применением вилочных погрузчиков и ричстакера.', href: '/uslugi/peretarka-gruzov' },
-      { icon: Scale, title: 'Взвешивание груза и контейнеров', description: 'Взвешивание груза и контейнеров с выдачей документов.', href: '/uslugi/vzveshivanie' },
-      { icon: Tag, title: 'Стикеровка и маркировка', description: 'Стикеровка, маркировка груза, сканирование QR-кода.', href: '/uslugi/stikerovka-markirovka' },
-      { icon: Hand, title: 'Ручная и механизированная обработка', description: 'Ручная обработка груза и механизированная с ручной доработкой.', href: '/uslugi/ruchnaya-obrabotka' },
-      { icon: Layers, title: 'Формирование грузовой единицы', description: 'Формирование грузовой единицы с предоставлением поддона и запаллетирование.', href: '/uslugi/formirovanie-gruzovoy-edinicy' },
+      { icon: RefreshCw, title: 'Перетарка, затарка и погрузо-разгрузочные работы', href: '/uslugi/peretarka-gruzov' },
+      { icon: Scale,     title: 'Взвешивание груза и контейнеров',                  href: '/uslugi/vzveshivanie' },
+      { icon: Tag,       title: 'Стикеровка и маркировка',                          href: '/uslugi/stikerovka-markirovka' },
+      { icon: Hand,      title: 'Ручная и механизированная обработка',              href: '/uslugi/ruchnaya-obrabotka' },
+      { icon: Layers,    title: 'Формирование грузовой единицы',                    href: '/uslugi/formirovanie-gruzovoy-edinicy' },
     ],
   },
   {
     label: 'Специальные грузы',
     color: 'orange' as const,
     services: [
-      { icon: Droplets, title: 'Наливные грузы и флексибаги', description: 'Приём наливного груза с автоцистерн, оборудование контейнеров флексибагами.', href: '/uslugi/nalivnye-gruzy' },
-      { icon: AlertTriangle, title: 'Нестандартные грузы', description: 'Обработка тяжеловесных и негабаритных грузов. Только по согласованию.', href: '/uslugi/nestandartnye-gruzy' },
+      { icon: Droplets,      title: 'Наливные грузы и флексибаги', href: '/uslugi/nalivnye-gruzy' },
+      { icon: AlertTriangle, title: 'Нестандартные грузы',          href: '/uslugi/nestandartnye-gruzy' },
     ],
   },
 ]
 
 const badgeStyles = {
-  amber: 'bg-amber-50 text-amber-800 border-amber-200',
-  blue:  'bg-blue-50  text-blue-800  border-blue-200',
-  teal:  'bg-teal-50  text-teal-800  border-teal-200',
+  amber:  'bg-amber-50  text-amber-800  border-amber-200',
+  blue:   'bg-blue-50   text-blue-800   border-blue-200',
+  teal:   'bg-teal-50   text-teal-800   border-teal-200',
   orange: 'bg-orange-50 text-orange-800 border-orange-200',
 }
 
 const dotStyles = {
-  amber: 'bg-amber-400',
-  blue:  'bg-blue-400',
-  teal:  'bg-teal-400',
+  amber:  'bg-amber-400',
+  blue:   'bg-blue-400',
+  teal:   'bg-teal-400',
   orange: 'bg-orange-400',
 }
 
@@ -82,11 +82,11 @@ export default function UslugiPage() {
 
       <section className="section-py bg-white">
         <div className="container-site">
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-7">
             {categories.map((cat) => (
               <div key={cat.label}>
                 {/* Category header */}
-                <div className="mb-4 flex items-center gap-3">
+                <div className="mb-3 flex items-center gap-3">
                   <span className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wider ${badgeStyles[cat.color]}`}>
                     <span className={`inline-block h-1.5 w-1.5 rounded-full ${dotStyles[cat.color]}`} aria-hidden="true" />
                     {cat.label}
@@ -94,25 +94,21 @@ export default function UslugiPage() {
                   <div className="h-px flex-1 bg-surface-border" />
                 </div>
 
-                {/* Services grid */}
-                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {/* Cards — 3 columns */}
+                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
                   {cat.services.map((s) => (
                     <Link
                       key={s.href}
                       href={s.href}
-                      className="group flex items-start gap-4 rounded-xl border border-surface-border bg-white p-4 transition-all hover:-translate-y-0.5 hover:border-brand-accent/40 hover:shadow-md"
+                      className="group flex items-center gap-3 rounded-lg border border-surface-border bg-white px-4 py-3 transition-all hover:border-brand-accent/50 hover:bg-amber-50/50 hover:shadow-sm"
                     >
-                      <div className="icon-circle mt-0.5 shrink-0 transition-colors group-hover:bg-brand-accent group-hover:text-white">
+                      <div className="icon-circle shrink-0 transition-colors group-hover:bg-brand-accent group-hover:text-white">
                         <s.icon className="h-4 w-4" aria-hidden="true" />
                       </div>
-                      <div className="min-w-0 flex-1">
-                        <h2 className="mb-1 text-sm font-semibold leading-snug text-text-primary">{s.title}</h2>
-                        <p className="text-xs leading-relaxed text-text-secondary">{s.description}</p>
-                        <div className="mt-2 flex items-center gap-1 text-xs font-medium text-brand-accent">
-                          Подробнее
-                          <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
-                        </div>
-                      </div>
+                      <span className="flex-1 text-sm font-medium leading-snug text-text-primary">
+                        {s.title}
+                      </span>
+                      <ArrowRight className="h-3.5 w-3.5 shrink-0 text-text-muted transition-all group-hover:translate-x-0.5 group-hover:text-brand-accent" aria-hidden="true" />
                     </Link>
                   ))}
                 </div>
