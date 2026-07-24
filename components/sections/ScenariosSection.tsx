@@ -76,13 +76,34 @@ export default function ScenariosSection() {
 
   const handleSelect = (id: string) => {
     setActive(id)
-    // Reset the interval so it starts counting from now
     if (intervalRef.current) clearInterval(intervalRef.current)
     intervalRef.current = setInterval(advance, INTERVAL_MS)
   }
 
   return (
     <section className="section-py bg-slate-50" aria-labelledby="scenarios-heading">
+      <style>{`
+        @keyframes scenario-in {
+          from { opacity: 0; transform: translateY(12px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scenario-progress {
+          from { transform: scaleX(0); }
+          to   { transform: scaleX(1); }
+        }
+        .scenario-panel {
+          animation: scenario-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        .scenario-progress {
+          animation: scenario-progress ${INTERVAL_MS}ms linear forwards;
+          transform-origin: left;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .scenario-panel { animation: none; }
+          .scenario-progress { animation: none; transform: scaleX(1); }
+        }
+      `}</style>
+
       <div className="container-site">
         <SectionTitle
           id="scenarios-heading"
@@ -115,10 +136,8 @@ export default function ScenariosSection() {
                 id={`scenario-tab-${s.id}`}
                 onClick={() => handleSelect(s.id)}
                 className={cn(
-                  'flex items-start gap-3 rounded-xl px-4 py-3.5 text-left transition-all duration-200',
-                  active === s.id
-                    ? 'bg-white shadow-sm'
-                    : 'hover:bg-white/60'
+                  'relative flex items-start gap-3 overflow-hidden rounded-xl px-4 py-3.5 text-left transition-all duration-200',
+                  active === s.id ? 'bg-white shadow-sm' : 'hover:bg-white/60'
                 )}
               >
                 <span
@@ -137,16 +156,26 @@ export default function ScenariosSection() {
                 >
                   {s.title}
                 </span>
+
+                {/* Progress bar — only on active tab, resets on each switch via key */}
+                {active === s.id && (
+                  <span
+                    key={active}
+                    className="scenario-progress absolute bottom-0 left-0 h-[2px] w-full bg-brand-accent"
+                    aria-hidden="true"
+                  />
+                )}
               </button>
             ))}
           </div>
 
-          {/* Content panel */}
+          {/* Content panel — key forces remount → animation restarts */}
           <div
+            key={current.id}
             role="tabpanel"
             id={`scenario-panel-${current.id}`}
             aria-labelledby={`scenario-tab-${current.id}`}
-            className="flex flex-1 flex-col justify-center bg-white p-8 md:p-10"
+            className="scenario-panel flex flex-1 flex-col justify-center bg-white p-8 md:p-10"
           >
             {/* Badge */}
             <div className="mb-4 inline-flex w-fit items-center gap-1.5 rounded-full bg-brand-accent/10 px-3 py-1">
